@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace ASCIIrecipient
 {
@@ -20,9 +22,12 @@ namespace ASCIIrecipient
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {         
+
         public MainWindow()
         {
+            Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            
             InitializeComponent();
         }
 
@@ -60,6 +65,12 @@ namespace ASCIIrecipient
             converter.CreateASCII();
             DestinationText.Text = converter.ASCIItext;
         }
-        
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            var settings = new Settings();
+            settings.Show();
+            DataContext = settings;
+        }
     }
 }

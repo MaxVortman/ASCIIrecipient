@@ -21,9 +21,9 @@
                 <MenuItem Header="Open Image" x:Name="BrowseButton" Click="BrowseButton_Click"></MenuItem>
                 <MenuItem Header="Save ASCII" x:Name="SaveButton"></MenuItem>
             </MenuItem>
-            <MenuItem Header="Settings" x:Name="SettingsButton"></MenuItem>
+            <MenuItem Header="Settings" x:Name="SettingsButton" Click="SettingsButton_Click"></MenuItem>
         </Menu>
         <Image Grid.Column="0" Grid.Row="1" x:Name="SourceImage"></Image>
-        <TextBlock Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" FontSize="1" FontFamily="Consolas" TextAlignment="Center" x:Name="DestinationText"></TextBlock>
+        <TextBlock DataContext="{Binding FontData}" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" FontSize="1" FontFamily="{Binding FontFamily}" TextAlignment="Center" x:Name="DestinationText"></TextBlock>
     </Grid>
 </Window>
