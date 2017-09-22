@@ -14,7 +14,7 @@
             </DockPanel>
             <DockPanel>
                 <Label Margin="10" DockPanel.Dock="Left">Font Size</Label>
-                <TextBox Margin="15" DockPanel.Dock="Right" x:Name="FontSizeTextBox"></TextBox>
+                <TextBox Margin="15" DockPanel.Dock="Right" x:Name="FontSizeTextBox" PreviewTextInput="FontSizeTextBox_PreviewTextInput"></TextBox>
             </DockPanel>
             <Button Margin="50" Click="Button_Click">Accept</Button>
         </StackPanel>

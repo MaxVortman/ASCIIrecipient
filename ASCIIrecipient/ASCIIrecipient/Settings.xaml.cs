@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 
 namespace ASCIIrecipient
 {
@@ -49,6 +50,15 @@ namespace ASCIIrecipient
             fontData.FontFamily = new FontFamily(FontFamilyComboBox.SelectedItem.ToString());
             if(FontSizeTextBox.Text != "")
             fontData.FontSize = Convert.ToDouble(FontSizeTextBox.Text);
-        }        
+        }
+        
+
+        private void FontSizeTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0) && e.Text != "," || FontSizeTextBox.Text.Contains(",") && e.Text == ",")
+            {
+                e.Handled = true;                
+            }
+        }
     }
 }
