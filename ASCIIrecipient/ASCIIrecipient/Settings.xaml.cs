@@ -20,22 +20,14 @@ namespace ASCIIrecipient
     /// <summary>
     /// Логика взаимодействия для Settings.xaml
     /// </summary>
-    public partial class Settings : Window, INotifyPropertyChanged
+    public partial class Settings : Window
     {
 
-        private FontProperties fontData;
-        public FontProperties FontData
-        {
-            get { return fontData ?? new FontProperties { FontFamily = new FontFamily("Consolas"), FontSize = 1 }; }
-            set
-            {
-                fontData = value;
-                OnPropertyChanged("FontData");
-            }
-        }
+        private FontProperties fontData;        
 
-        public Settings()
+        public Settings(FontProperties fontData)
         {
+            this.fontData = fontData;
             InitializeComponent();
         }
 
@@ -52,16 +44,8 @@ namespace ASCIIrecipient
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            FontData = new FontProperties
-            {
-                FontFamily = FontFamilyComboBox.FontFamily
-            };
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
-        }
+            fontData.FontFamily = FontFamilyComboBox.FontFamily;
+            
+        }        
     }
 }

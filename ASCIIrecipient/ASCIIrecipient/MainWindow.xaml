@@ -24,6 +24,6 @@
             <MenuItem Header="Settings" x:Name="SettingsButton" Click="SettingsButton_Click"></MenuItem>
         </Menu>
         <Image Grid.Column="0" Grid.Row="1" x:Name="SourceImage"></Image>
-        <TextBlock DataContext="{Binding FontData}" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" FontSize="1" FontFamily="{Binding FontFamily}" TextAlignment="Center" x:Name="DestinationText"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" FontSize="{Binding FontSize}" FontFamily="{Binding FontFamily}" TextAlignment="Center" x:Name="DestinationText"></TextBlock>
     </Grid>
 </Window>

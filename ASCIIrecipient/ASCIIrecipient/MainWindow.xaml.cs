@@ -22,12 +22,13 @@ namespace ASCIIrecipient
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {         
-
+    {
+        public FontProperties FontData;
         public MainWindow()
         {
             Application.Current.MainWindow.WindowState = WindowState.Maximized;
-            
+            FontData = new FontProperties { FontFamily = new FontFamily("Consolas"), FontSize = 1 };
+            DataContext = FontData;
             InitializeComponent();
         }
 
@@ -68,9 +69,8 @@ namespace ASCIIrecipient
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            var settings = new Settings();
-            settings.Show();
-            DataContext = settings;
+            var settings = new Settings(FontData);
+            settings.Show();            
         }
     }
 }
