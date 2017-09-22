@@ -13,7 +13,7 @@
                 <ComboBox Margin="10" DockPanel.Dock="Right" x:Name="FontFamilyComboBox"></ComboBox>
             </DockPanel>
 
-            <Button Margin="50" Click="Button_Click">OK</Button>
+            <Button Margin="50" Click="Button_Click">Accept</Button>
         </StackPanel>
     </Grid>
 </Window>

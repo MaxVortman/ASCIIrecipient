@@ -44,7 +44,7 @@ namespace ASCIIrecipient
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            fontData.FontFamily = FontFamilyComboBox.FontFamily;
+            fontData.FontFamily = new FontFamily(FontFamilyComboBox.SelectedItem.ToString());
             
         }        
     }
