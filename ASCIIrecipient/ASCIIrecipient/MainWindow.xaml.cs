@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.IO;
 
 namespace ASCIIrecipient
 {
@@ -71,6 +72,27 @@ namespace ASCIIrecipient
         {
             var settings = new Settings(FontData);
             settings.Show();            
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DestinationText.Text == "")
+            {
+                MessageBox.Show("Nothing to save!\nAdd some pictures!");
+                return;
+            }
+            var saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using (var destionationFile = File.Open(System.IO.Path.ChangeExtension(saveFileDialog.FileName, ".txt"), FileMode.Create, FileAccess.Write, FileShare.Write))
+                {
+                    using (var writer = new StreamWriter(destionationFile))
+                    {
+                        writer.Write(DestinationText.Text);
+                    } 
+                }
+            }
+
         }
     }
 }
