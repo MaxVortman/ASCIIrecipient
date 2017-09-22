@@ -12,7 +12,10 @@
                 <Label Margin="10" DockPanel.Dock="Left">Font Family</Label>
                 <ComboBox Margin="10" DockPanel.Dock="Right" x:Name="FontFamilyComboBox"></ComboBox>
             </DockPanel>
-
+            <DockPanel>
+                <Label Margin="10" DockPanel.Dock="Left">Font Size</Label>
+                <TextBox Margin="15" DockPanel.Dock="Right" x:Name="FontSizeTextBox"></TextBox>
+            </DockPanel>
             <Button Margin="50" Click="Button_Click">Accept</Button>
         </StackPanel>
     </Grid>

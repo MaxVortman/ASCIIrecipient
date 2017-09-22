@@ -12,7 +12,7 @@ namespace ASCIIrecipient
     public class FontProperties : INotifyPropertyChanged
     {
         private FontFamily fontFamily;
-        private int fontSize;
+        private double fontSize;
 
         public FontFamily FontFamily
         {
@@ -24,7 +24,7 @@ namespace ASCIIrecipient
             }
         }
 
-        public int FontSize
+        public double FontSize
         {
             get { return fontSize; }
             set

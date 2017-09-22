@@ -40,12 +40,15 @@ namespace ASCIIrecipient
                 SourceCB.Add(font.Source);
             }
             FontFamilyComboBox.ItemsSource = SourceCB;
+            //
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if(FontFamilyComboBox.SelectedItem != null)
             fontData.FontFamily = new FontFamily(FontFamilyComboBox.SelectedItem.ToString());
-            
+            if(FontSizeTextBox.Text != "")
+            fontData.FontSize = Convert.ToDouble(FontSizeTextBox.Text);
         }        
     }
 }
