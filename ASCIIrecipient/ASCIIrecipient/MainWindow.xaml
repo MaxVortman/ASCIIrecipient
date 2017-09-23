@@ -19,7 +19,7 @@
         <Menu Grid.Row="0" Grid.ColumnSpan="2">
             <MenuItem Header="File">
                 <MenuItem Header="Open Image" x:Name="BrowseButton" Click="BrowseButton_Click"></MenuItem>
-                <MenuItem Header="Save ASCII" x:Name="SaveButton" Click="SaveButton_Click"></MenuItem>
+                <MenuItem Header="Save ASCII text" x:Name="SaveButton" Click="SaveButton_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="Settings" x:Name="SettingsButton" Click="SettingsButton_Click"></MenuItem>
         </Menu>
