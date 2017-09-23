@@ -33,9 +33,10 @@ namespace ASCIIrecipient
                 for (int j = 0; j < bitmap.Width; j++)
                 {
                     var argb = bitmap[i, j];
-                    var pixelColor = Color.FromRgb((byte)((argb.Red + argb.Green + argb.Blue) / 3), 
-                        (byte)((argb.Red + argb.Green + argb.Blue) / 3), 
-                        (byte)((argb.Red + argb.Green + argb.Blue) / 3));
+                    var pixelColor = Color.FromArgb((byte)((argb.Red + argb.Green + argb.Blue + argb.Alpha) / 4), 
+                        (byte)((argb.Red + argb.Green + argb.Blue + argb.Alpha) / 4), 
+                        (byte)((argb.Red + argb.Green + argb.Blue + argb.Alpha) / 4),
+                        (byte)((argb.Red + argb.Green + argb.Blue + argb.Alpha) / 4));
                     var rValue = int.Parse(pixelColor.R.ToString());
                     asciiBuilder.Append(GetGrayShade(rValue));
                 }
