@@ -10,12 +10,13 @@
         <StackPanel>
             <DockPanel>
                 <Label Margin="10" DockPanel.Dock="Left">Font Family</Label>
-                <ComboBox Margin="10" DockPanel.Dock="Right" x:Name="FontFamilyComboBox"></ComboBox>
+                <ComboBox Margin="10" DockPanel.Dock="Right" x:Name="FontFamilyComboBox" SelectionChanged="FontFamilyComboBox_SelectionChanged"></ComboBox>
             </DockPanel>
             <DockPanel>
                 <Label Margin="10" DockPanel.Dock="Left">Font Size</Label>
                 <TextBox Margin="15" DockPanel.Dock="Right" x:Name="FontSizeTextBox" PreviewTextInput="FontSizeTextBox_PreviewTextInput"></TextBox>
             </DockPanel>
+            <TextBlock TextWrapping="WrapWithOverflow" Foreground="Red" Visibility="Hidden" x:Name="AttentionTextBlock">Caution! Changing the font may cause image distortion due to the distance between the characters.</TextBlock>
             <Button Margin="50" Click="Button_Click">Accept</Button>
         </StackPanel>
     </Grid>

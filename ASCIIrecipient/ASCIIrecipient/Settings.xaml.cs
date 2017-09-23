@@ -42,6 +42,8 @@ namespace ASCIIrecipient
             }
             FontFamilyComboBox.ItemsSource = SourceCB;
             //
+            FontFamilyComboBox.SelectedItem = "Consolas";
+            FontSizeTextBox.Text = "1";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -58,6 +60,18 @@ namespace ASCIIrecipient
             if (!Char.IsDigit(e.Text, 0) && e.Text != "," || FontSizeTextBox.Text.Contains(",") && e.Text == ",")
             {
                 e.Handled = true;                
+            }
+        }
+
+        private void FontFamilyComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (FontFamilyComboBox.SelectedItem.ToString() != "Consolas")
+            {
+                AttentionTextBlock.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                AttentionTextBlock.Visibility = Visibility.Hidden;
             }
         }
     }
