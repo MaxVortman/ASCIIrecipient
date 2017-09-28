@@ -1,2 +1,2 @@
 # ASCIIrecipient
-Get ASCII text from any images. 
+Convert images(.jpg, .png) to ASCII text format.
